@@ -46,7 +46,7 @@ exports.notice = async function (comment) {
         || comment.get('mail') === process.env.SMTP_USER)
     return 'notice skipped'
 
-  const emailSubject = `👉 咚！「${process.env.SITE_NAME}」上有新评论了`
+  const emailSubject = `ItemChen: 👉 嗨！「${process.env.SITE_NAME}」上有新评论了`
   const emailContent = noticeTemplate({
     siteName: process.env.SITE_NAME,
     siteUrl: process.env.SITE_URL,
@@ -84,7 +84,7 @@ exports.send = async function (comment) {
             || parentComment.get('mail') === process.env.SMTP_USER)
       return 'send skipped'
 
-    const emailSubject = `👉 叮咚！「${process.env.SITE_NAME}」上有人@了你`
+    const emailSubject = `ItemChen: 👉 嗨！「${process.env.SITE_NAME}」上有人@了你`
     const emailContent = sendTemplate({
       siteName: process.env.SITE_NAME,
       siteUrl: process.env.SITE_URL,
